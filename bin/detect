@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ -e "$1/pom.xml" ] ; then
+	echo "Java Tomcat App 10:37"
+	exit 0
+else
+	exit 1
+fi
