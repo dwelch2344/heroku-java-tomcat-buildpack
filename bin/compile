@@ -64,6 +64,7 @@ if [ ! -d tomcat ]; then
   echo -n "-----> Installing Tomcat 7.0.35..."
   curl --silent --location $TOMCAT_URL | tar xz
   mv apache-tomcat-7.0.35 $BUILD_DIR/tomcat
+  rm -rf $BUILD_DIR/tomcat/webapps/*
   chmod +x $BUILD_DIR/tomcat/bin/*.sh
   echo " done"
 fi
