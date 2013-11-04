@@ -59,11 +59,12 @@ fi
 # change to cache dir to install maven & tomcat
 cd $CACHE_DIR
 
-TOMCAT_URL="http://apache.petsads.us/tomcat/tomcat-7/v7.0.35/bin/apache-tomcat-7.0.35.tar.gz"
+TOMCAT_V="7.0.47"
+TOMCAT_URL="http://apache.petsads.us/tomcat/tomcat-7/v${TOMCAT_V}/bin/apache-tomcat-${TOMCAT_V}.tar.gz"
 if [ ! -d tomcat ]; then
-  echo -n "-----> Installing Tomcat 7.0.35..."
+  echo -n "-----> Installing Tomcat ${TOMCAT_V}..."
   curl --silent --location $TOMCAT_URL | tar xz
-  mv apache-tomcat-7.0.35 $BUILD_DIR/tomcat
+  mv apache-tomcat-${TOMCAT_V} $BUILD_DIR/tomcat
   rm -rf $BUILD_DIR/tomcat/webapps/*
   chmod +x $BUILD_DIR/tomcat/bin/*.sh
   echo " done"
